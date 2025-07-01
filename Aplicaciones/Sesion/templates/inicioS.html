@@ -1,0 +1,49 @@
+{% extends './plantilla.html' %}
+{% block contenido %}
+<br>
+<h1>Listado de Sesiones</h1>
+<hr>
+<br>
+<div class="text-end">
+    <a href="nuevaSesion" class="btn btn-primary bg-info">Agregar Sesión</a>
+</div>
+<br>
+<br>
+<table class="table table-bordered table-striped table-hover">
+    <thead class="bg-info">
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE_CLIENTE</th>
+            <th>FECHA</th>
+            <th>LUGAR</th>
+            <th>DURACION</th>
+            <th>TIPO_SESION</th>
+            <th>COSTO</th>
+            <th>FOTOGRAFO</th>
+            <th>ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for SesionTemporal in sesion %}
+            <tr>
+                <td>{{SesionTemporal.id}}</td>
+                <td>{{SesionTemporal.nombre_cliente}}</td>
+                <td>{{SesionTemporal.fecha}}</td>
+                <td>{{SesionTemporal.lugar}}</td>
+                <td>{{SesionTemporal.duracion}}</td>
+                <td>{{SesionTemporal.tipo_sesion}}</td>
+                <td>{{SesionTemporal.costo}}</td>
+                <td>{{SesionTemporal.fotografox}}</td>
+                <td>
+                    <a href="" class="btn btn-outline-warning">
+                        <i class="fa fa-pen"></i>    
+                    </a>
+                    <a href="eliminarSesion/{{SesionTemporal.id}}"  class="btn btn-outline-danger" onclick="return confirm('Estas seguro que quieres eliminar')">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

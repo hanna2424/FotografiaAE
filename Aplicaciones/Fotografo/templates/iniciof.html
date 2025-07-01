@@ -1,0 +1,43 @@
+{% extends './plantilla.html' %}
+{% block contenido %}
+<br>
+<h1>Listado de Fotografo</h1>
+<hr>
+<br>
+<div class="text-end">
+    <a href="nuevoFotografo" class="btn btn-primary bg-info">Agregar Fotografo</a>
+</div>
+<br>
+<br>
+<table class="table table-bordered table-striped table-hover">
+    <thead class="bg-info">
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>ESPECIALIDAD</th>
+            <th>AÑOS EXPERIENCIA</th>
+            <th>CONTACTO</th>
+            <th>ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+        {%for FotografoTemporal in fotografo %}
+            <tr>
+                <td>{{FotografoTemporal.id}}</td>
+                <td>{{FotografoTemporal.nombre}}</td>
+                <td>{{FotografoTemporal.especialidad}}</td>
+                <td>{{FotografoTemporal.anios_experiencia}}</td>
+                <td>{{FotografoTemporal.contacto}}</td>
+                <td>
+                    <a href="" class="btn btn-outline-warning">
+                        <i class="fa fa-pen"></i>    
+                    </a>
+                    <a href="eliminarFotografo/{{FotografoTemporal.id}}"  class="btn btn-outline-danger" onclick="return confirm('Estas seguro que quieres eliminar')">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends './plantilla.html' %}
+{% block contenido %}
+<div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6 bg-light">
+        <h1>Nueva Sesión</h1>
+        <form action="guardarSesion"  method="post">
+            {% csrf_token %}
+            <label for="">Nombre Cliente:</label>
+            <input class="form-control" type="text" name="nombre_cliente" id="nombre_cliente">
+            <br><br><br>
+            <label for="">Fecha:</label>
+            <input class="form-control"  type="text" name="fecha" id="fecha">
+            <br><br><br>
+            <label for="">Lugar:</label>
+            <input class="form-control"  type="text" name="lugar" id="lugar">
+            <br><br><br>
+            <label for="">Duración:</label>
+            <input class="form-control"  type="text" name="duracion" id="duracion">
+            <br><br><br>
+            <label for="">Tipo de Sesión:</label>
+            <input class="form-control"  type="text" name="tipo_sesion" id="tipo_sesion">
+            <br><br><br>
+            <label for="">Costo:</label>
+            <input class="form-control"  type="number" name="costo" id="costo">
+            <br><br><br>
+            <label for="">Fotografo:</label>
+            <input class="form-control"  type="text" name="fotografo" id="fotografo">
+            <br><br><br>
+            
+            <button type="submit" class="btn btn-success">Guardar</button>
+            <a class="btn btn-outline-danger" href="/">Cancelar</a>
+        </form>
+    </div>
+    <div class="col-md-3">   
+    </div>
+</div><br><br><br>
+{% endblock %}

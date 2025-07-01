@@ -1,0 +1,36 @@
+{% extends './plantilla.html' %}
+{% block contenido %}
+<div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6 bg-light">
+        <h1>Nueva Camara</h1>
+        <form action="guardarCamara"  method="post">
+            {% csrf_token %}
+            <label for="">Marca:</label>
+            <input class="form-control" type="text" name="marca" id="marca">
+            <br><br><br>
+            <label for="">Modelo:</label>
+            <input class="form-control"  type="text" name="modelo" id="modelo">
+            <br><br><br>
+            <label for="">Tipo:</label>
+            <input class="form-control"  type="text" name="tipo" id="tipo">
+            <br><br><br>
+            <label for="">Resolucion:</label>
+            <input class="form-control"  type="text" name="resolucion" id="resolucion">
+            <br><br><br>
+            <label for="">Lente:</label>
+            <input class="form-control"  type="text" name="lente" id="lente">
+            <br><br><br>
+            <label for="">precio:</label>
+            <input class="form-control"  type="number" name="precio" id="precio">
+            <br><br><br>
+            
+            <button type="submit" class="btn btn-success">Guardar</button>
+            <a class="btn btn-outline-danger" href="/">Cancelar</a>
+        </form>
+    </div>
+    <div class="col-md-3">   
+    </div>
+</div><br><br><br>
+{% endblock %}
